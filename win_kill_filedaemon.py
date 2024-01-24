@@ -18,6 +18,9 @@ def get_filedaemon_pid():
     except:
         print("Could not find filedaemon pid file")
         sys.exit(0)
+    if not data:
+        print("Could not read data from filedaemon pid file")
+        sys.exit(0)
     return int(data) 
 
 # You can replace the value in process_pid with the actual PID of the process you want to kill
